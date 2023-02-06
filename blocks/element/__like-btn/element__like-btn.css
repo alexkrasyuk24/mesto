@@ -4,7 +4,7 @@
   padding: 0;
   width: 22px;
   height: 19px;
-  background: transparent url(../../../../images/elements/like.png);
+  background: transparent url("../../../../images/elements/like.png");
   background-repeat: no-repeat;
   background-size: contain;
   border: none;

@@ -1,5 +1,5 @@
 .profile__edit-button {
-  background: transparent url(../../../images/profile/pencil.png);
+  background: transparent url("../../../images/profile/pencil.png");
   background-size: contain;
   background-repeat: no-repeat;
   border: 1px solid #FFFFFF;

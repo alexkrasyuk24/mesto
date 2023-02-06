@@ -1,5 +1,5 @@
 .element__like-btn_active {
-  background: transparent url(../../../../images/elements/like.png);
+  background: transparent url("../../../../images/elements/like.png");
 }
 .element__like-btn_active:hover {
   opacity: 0.5;
