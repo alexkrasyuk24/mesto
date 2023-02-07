@@ -26,12 +26,9 @@
 
 @media screen and (max-width: 600px) {
   .popup__close {
-    background: url("../../../images/popup/closebutton.png");
-    background-repeat: no-repeat;
-    background-position: center;
+    background-size: contain;
     width: 20px;
     height: 20px;
-    top: -36px;
     right: 0;
   }
 }

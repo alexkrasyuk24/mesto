@@ -3,9 +3,17 @@
   height: 120px;
   border-radius: 50%;
   transition: .4s linear;
+  margin-right: 30px;
 }
 
-.profile__avatar-image:hover {
-  cursor: pointer;
-  opacity: .3;
+@media screen and (max-width: 522px) {
+  .profile__avatar-image {
+    margin: 0 30px 26px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile__avatar-image {
+    margin: 0 0 26px 0;
+  }
 }

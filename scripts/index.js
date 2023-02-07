@@ -9,10 +9,8 @@ const editButton = document.querySelector('.profile__edit-button');
 
 const handleEditButtonClick = () => {
   popup.classList.add('popup_opened');
-  let name = profileTitle.textContent;
-  let job = profileSubtitle.textContent;
-  popupTitle.value = name;
-  popupSubtitle.value = job;
+  popupTitle.value = profileTitle.textContent;
+  popupSubtitle.value = profileSubtitle.textContent;
 };
 
 const handleCloseButtonClick = () => {

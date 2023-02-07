@@ -5,7 +5,7 @@
   margin: 45px 200px 0 200px;
   max-width: 880px;
   width: calc(100% - 2*200px);
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
 @media screen and (max-width: 1023px) {
@@ -19,6 +19,5 @@
 @media screen and (max-width: 767px) {
   .header {
       justify-content: flex-end;
-      height: 56px;
   }
 }

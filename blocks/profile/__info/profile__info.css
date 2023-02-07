@@ -3,7 +3,6 @@
   grid-template-columns: 1fr 24px;
   grid-column-gap: 18px;
   grid-row-gap: 16px;
-  max-height: 73px;
   align-self: center;
   align-items: baseline;
 }
@@ -12,6 +11,5 @@
   .profile__info {
     grid-column-gap: 10px;
     grid-row-gap: 14px;
-    max-height: 54px;
   }
 }
