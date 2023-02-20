@@ -91,8 +91,7 @@ function openPopup(popup) {
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
 }
-
-//1 попап функция открыть/закрыть форму попапов
+//1 попап редактировать профиль
 function handleEditButtonClick() {
   popupTitle.value = profileTitle.textContent;
   popupSubtitle.value = profileSubtitle.textContent;
@@ -100,15 +99,8 @@ function handleEditButtonClick() {
 };
 //2 попап добавления изображений
 const handleEditButtonAddClick = () => {
-  popupAdd.classList.add('popup_opened');
+  openPopup(popupAdd);
 };
-// редактировать форму
-function handleFormSubmit(evt) {
-  evt.preventDefault();
-  profileTitle.textContent = popupTitle.value;
-  profileSubtitle.textContent = popupSubtitle.value;
-};
-// добавление изображений
 function handleAddSubmitClick(evt) {
   evt.preventDefault();
   const addNewImage = addCards(nameInput.value, linkInput.value);
@@ -123,7 +115,6 @@ function handleFormSubmitClick(evt) {
   profileSubtitle.textContent = popupSubtitle.value;
   closePopup(profilePopup);
 };
-
 popupFormAdd.addEventListener("submit", handleAddSubmitClick);
 editButton.addEventListener('click', handleEditButtonClick);
 editButtonAdd.addEventListener('click', handleEditButtonAddClick);
