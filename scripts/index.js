@@ -9,7 +9,7 @@ const popupForm = document.querySelector('.popup__form_edit');
 const popupTitle = document.querySelector('.popup__input_type_name');
 const popupSubtitle = document.querySelector('.popup__input_type_job');
 // открытие/редактирование формы добавления изображений
-const popupAdd = document.querySelector('.popup_add');
+const popupAdd = document.querySelector('.popup__add');
 const popupFormAdd = document.querySelector(".popup__form_add");
 const editButtonAdd = document.querySelector('.profile__add-button');
 const nameInput = document.querySelector(".popup__input_value_place");

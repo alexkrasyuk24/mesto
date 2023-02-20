@@ -24,7 +24,7 @@
 * DOM-элементы
 * Дебаггинг
 
-## [Ссылка на проект &rarr;](https://alexkrasyuk24.github.io/mesto/index.html)
+## [Ссылка на проект &rarr;]()
 
 ## [Чеклист для самопроверки](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-5.pdf)
 
