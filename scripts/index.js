@@ -16,7 +16,7 @@ const nameInput = document.querySelector(".popup__input_value_place");
 const linkInput = document.querySelector(".popup__input_value_link");
 // кнопка поставить/удалить лайк
 const likeButton = document.querySelectorAll('.elements__like');
-const deleteButton = document.querySelector('.elments__delete');
+const deleteButton = document.querySelector('.elements__delete');
 // список изображений
 const template = document.querySelector('.template').content;
 const elements = document.querySelector('.elements');
