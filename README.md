@@ -2,7 +2,7 @@
 # «Место» - проектная работа для [Яндекс.Практикум](https://practicum.yandex.ru/)
 
 ## О проекте
-Интерактивная страница для [Яндекс.Практикум](https://practicum.yandex.ru/), где есть возможность редактировать профиль, имя и описание.
+Интерактивная страница для [Яндекс.Практикум](https://practicum.yandex.ru/), где есть возможность редактировать профиль, имя и описание, а также добавлять/удалять новые изображения.
 
 ## В проекте используется:
 * Позиционирование блоков и элементов;
@@ -26,6 +26,6 @@
 
 ## [Ссылка на проект &rarr;](https://alexkrasyuk24.github.io/mesto/index.html)
 
-## [Чеклист для самопроверки](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-4.pdf)
+## [Чеклист для самопроверки](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-5.pdf)
 
-## [Макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+## [Макет в Figma](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=50160%3A347&t=f42puUU7BlZ83Fqn-0)
