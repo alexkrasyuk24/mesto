@@ -73,24 +73,35 @@ function addCards(nameValue, linkValue) {
     });
     return elementsItem;
   };
-
 initialCards.forEach((card) => {
   const addImage = addCards(card.name, card.link);
   elementsList.append(addImage);
 });
-
+//Добавил закрытие попапов через оверлей
+function closeOverlayListener(evt) {
+  if (evt.target.classList.contains('popup_opened')) {
+      closePopup(evt.target);
+  }
+}
 closeButtons.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
-
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('mousedown', closeOverlayListener);
+  //закрытие попапа нажатием на ESC
+  document.addEventListener('keydown', function(evt) {
+    if (evt.key === 'Escape') {
+    closePopup(popup);
+    }
+    });
 }
-
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('mousedown', closeOverlayListener);
 }
+
 //1 попап редактировать профиль
 function handleEditButtonClick() {
   popupTitle.value = profileTitle.textContent;
@@ -115,6 +126,7 @@ function handleFormSubmitClick(evt) {
   profileSubtitle.textContent = popupSubtitle.value;
   closePopup(profilePopup);
 };
+
 popupFormAdd.addEventListener("submit", handleAddSubmitClick);
 editButton.addEventListener('click', handleEditButtonClick);
 editButtonAdd.addEventListener('click', handleEditButtonAddClick);
