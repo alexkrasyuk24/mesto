@@ -6,9 +6,11 @@ const formValidationConfig = {
   inputErrorClass: 'popup__input_type_error',
   
 };
+
 function disabledSubmit(evt) {
   evt.preventDefault();
 }
+
 // функция включения валидации
 function enableValidation(config) {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
@@ -21,11 +23,13 @@ function enableValidation(config) {
   toggleButton(form, config);
 });
 }
+
 // Валидация формы
 function handleFormInput(evt, config) {
   const input = evt.target;
   const inputId = input.id;
   const errorElement = document.querySelector(`#${inputId}-error`);
+
   if (input.validity.valid) {
     input.classList.remove(config.inputErrorClass)
     errorElement.textContent = '';
@@ -34,6 +38,7 @@ function handleFormInput(evt, config) {
     errorElement.textContent = input.validationMessage;
   }
 }
+
 // Активная/Неактивная кнопка
 function toggleButton(form, config) {
   const buttonSubmit = form.querySelector(config.submitButtonSelector);
@@ -41,6 +46,7 @@ function toggleButton(form, config) {
   buttonSubmit.disabled = isFormInvalid;
   buttonSubmit.classList.toggle(config.inactiveButtonClass, isFormInvalid);
 }
+
 function addInputListners(form, config) {
   const inputList = Array.from(form.querySelectorAll(config.inputSelector));
   inputList.forEach((inputElement) => {
@@ -49,4 +55,5 @@ function addInputListners(form, config) {
     });
   });
 }
+
 enableValidation(formValidationConfig);

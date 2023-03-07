@@ -125,6 +125,7 @@ function handleFormSubmitClick(evt) {
   profileSubtitle.textContent = popupSubtitle.value;
   closePopup(profilePopup);
 };
+
 popupFormAdd.addEventListener("submit", handleAddSubmitClick);
 editButton.addEventListener('click', handleEditButtonClick);
 editButtonAdd.addEventListener('click', handleEditButtonAddClick);
