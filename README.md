@@ -12,6 +12,7 @@
 
 ### HTML
 * Семантические теги
+* Браузерная валидация
 ### CSS
 * Позиционирование блоков и элементов
 * Адаптивная верстка
@@ -23,9 +24,10 @@
 * Примитивные типы данных
 * DOM-элементы
 * Дебаггинг
+* Валидация форм через JS
 
 ## [Ссылка на проект &rarr;](https://alexkrasyuk24.github.io/mesto/index.html)
 
-## [Чеклист для самопроверки](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-5.pdf)
+## [Чеклист для самопроверки](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-6.pdf)
 
-## [Макет в Figma](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=50160%3A347&t=f42puUU7BlZ83Fqn-0)
+## [Макет в Figma](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=1140%3A291&t=ka1VUnuqhCe5ZDlD-0)

@@ -1,0 +1,6 @@
+.form__section {
+  display: flex;
+  flex-direction: column;
+  min-height: 44px;
+  padding: 0 0 13px 0;
+}

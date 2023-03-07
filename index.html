@@ -34,33 +34,34 @@
          <div class="popup__container">
             <button class="popup__close" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form popup__form_edit" name="popup" novalidate>
-               <input 
-               id="input-name"
-               required
-               type="text" 
-               minlength="2"
-               maxlength="40"
-               class="popup__input popup__input_type_name" 
-               name="name" 
-               value="Имя" 
-               placeholder="Ваше имя">
-               <span id="input-name-error" class="error"></span>
-             
-
-               <input
-               id="input-job"
-               required
-               type="text"
-               minlength="2"
-               maxlength="200" 
-               class="popup__input popup__input_type_job" 
-               name="job" 
-               value="Описание" 
-               placeholder="Вид деятельности">
-               <span id="input-job-error" class="error"></span>
-            
-               <button class="popup__button" type="submit" disabled>Сохранить</button>
+            <form class="popup__form popup__form_edit" name="popup" id="form" novalidate>
+               <div class="form__section">
+                  <input 
+                     id="input-name"
+                     required
+                     type="text" 
+                     minlength="2"
+                     maxlength="40"
+                     class="popup__input popup__input_type_name" 
+                     name="name" 
+                     value="Имя" 
+                     placeholder="Ваше имя">
+                  <span id="input-name-error" class="error"></span>
+               </div>
+               <div class="form__section">
+                  <input
+                     id="input-job"
+                     required
+                     type="text"
+                     minlength="2"
+                     maxlength="200" 
+                     class="popup__input popup__input_type_job" 
+                     name="job" 
+                     value="Описание" 
+                     placeholder="Вид деятельности">
+                  <span id="input-job-error" class="error"></span>
+               </div>
+               <button class="popup__button" type="submit">Сохранить</button>
             </form>
          </div>
       </div>
@@ -68,29 +69,29 @@
          <div class="popup__container">
             <button class="popup__close popup__add-close" type="button"></button>
             <h2 class="popup__title">Новое место</h2>
-            <form class="popup__form popup__form_add" name="popup" id="form" novalidate>
-               <input 
-               id="input-name"
-               required
-               type="text" 
-               minlength="2"
-               maxlength="30"
-               class="popup__input popup__input_add popup__input_value_place" 
-               name="name" 
-               placeholder="Название">
-
-               <span id="input-name-error" class="error"></span>
-
-               <input 
-               id="input-link"
-               required
-               type="url" 
-               class="popup__input popup__input_add popup__input_value_link" 
-               name="link" 
-               placeholder="Ссылка на картинку">
-
-               <span id="input-link-error" class="error"></span>
-
+            <form class="popup__form popup__form_add" name="popup" novalidate>
+               <div class="form__section">
+                  <input 
+                     id="input-mesto"
+                     required
+                     type="text" 
+                     minlength="2"
+                     maxlength="30"
+                     class="popup__input popup__input_value_place" 
+                     name="name" 
+                     placeholder="Название">
+                  <span id="input-mesto-error" class="error"></span>
+               </div>
+               <div class="form__section">
+                  <input 
+                     id="input-link"
+                     required
+                     type="url" 
+                     class="popup__input popup__input_value_link" 
+                     name="link" 
+                     placeholder="Ссылка на картинку">
+                  <span id="input-link-error" class="error"></span>
+               </div>
                <button class="popup__button" type="submit" aria-label="Создать">Создать</button>
             </form>
          </div>
