@@ -26,7 +26,7 @@
 * Дебаггинг
 * Валидация форм через JS
 
-## [Ссылка на проект &rarr;]()
+## [Ссылка на проект &rarr;](https://alexkrasyuk24.github.io/mesto/index.html)
 
 ## [Чеклист для самопроверки](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-6.pdf)
 
