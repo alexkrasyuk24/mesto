@@ -35,7 +35,6 @@
             <button class="popup__close" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="popup__form popup__form_edit" name="popup" id="form" novalidate>
-               <fieldset class="form__set">
                   <input 
                      id="input-name"
                      required
@@ -47,8 +46,6 @@
                      value="Имя" 
                      placeholder="Ваше имя">
                   <span id="input-name-error" class="error"></span>
-               </fieldset>
-               <fieldset class="form__set">
                   <input
                      id="input-job"
                      required
@@ -60,7 +57,6 @@
                      value="Описание" 
                      placeholder="Вид деятельности">
                   <span id="input-job-error" class="error"></span>
-               </fieldset>
                <button class="popup__button" type="submit">Сохранить</button>
             </form>
          </div>
@@ -70,7 +66,6 @@
             <button class="popup__close popup__add-close" type="button"></button>
             <h2 class="popup__title">Новое место</h2>
             <form class="popup__form popup__form_add" name="popup" novalidate>
-              <fieldset class="form__set">
                   <input 
                      id="input-mesto"
                      required
@@ -81,8 +76,6 @@
                      name="name" 
                      placeholder="Название">
                   <span id="input-mesto-error" class="error"></span>
-              </fieldset>
-              <fieldset class="form__set">
                   <input 
                      id="input-link"
                      required
@@ -91,7 +84,6 @@
                      name="link" 
                      placeholder="Ссылка на картинку">
                   <span id="input-link-error" class="error"></span>
-              </fieldset>
                <button class="popup__button" type="submit" aria-label="Создать">Создать</button>
             </form>
          </div>
