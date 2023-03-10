@@ -5,52 +5,25 @@ const closeButtons = document.querySelectorAll('.popup__close');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 // редактирование профиля
-const popupForm = document.querySelector('.popup__form_edit');
+const popupFormEdit = document.querySelector('.popup__form_edit');
 const popupTitle = document.querySelector('.popup__input_type_name');
 const popupSubtitle = document.querySelector('.popup__input_type_job');
 // открытие/редактирование формы добавления изображений
 const popupAdd = document.querySelector('.popup_add');
-const popupFormAdd = document.querySelector(".popup__form_add");
+const popupFormAdd = document.querySelector('.popup__form_add');
 const editButtonAdd = document.querySelector('.profile__add-button');
-const nameInput = document.querySelector(".popup__input_value_place");
-const linkInput = document.querySelector(".popup__input_value_link");
+const nameInput = document.querySelector('.popup__input_value_place');
+const linkInput = document.querySelector('.popup__input_value_link');
 // кнопка поставить/удалить лайк
 const likeButton = document.querySelectorAll('.elements__like');
 const deleteButton = document.querySelector('.elements__delete');
 // список изображений
 const template = document.querySelector('.template').content;
-const elements = document.querySelector('.elements');
-const elementsList = elements.querySelector('.elements__list');
-const imagePopup = document.querySelector(".image-popup");
-const popupImage = document.querySelector(".image-popup__image");
-const popupImageTitle = document.querySelector(".image-popup__title");
-// массив изображений
-  const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
+const element = document.querySelector('.elements');
+const elementSet = element.querySelector('.elements__list');
+const imagePopup = document.querySelector('.image-popup');
+const popupImage = document.querySelector('.image-popup__image');
+const popupImageTitle = document.querySelector('.image-popup__title');
 // функция добавить, удалить, лайкнуть изображения
 function addCards(nameValue, linkValue) {
   const elementsItem = template.querySelector('.elements__item').cloneNode(true);
@@ -75,7 +48,7 @@ function addCards(nameValue, linkValue) {
   };
 initialCards.forEach((card) => {
   const addImage = addCards(card.name, card.link);
-  elementsList.append(addImage);
+  elementSet.append(addImage);
 });
 //Добавил закрытие попапов через оверлей
 function closeOverlayListener(evt) {
@@ -89,10 +62,11 @@ closeButtons.forEach((button) => {
 });
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  document.addEventListener('mousedown', closeOverlayListener);
+  popup.addEventListener('mousedown', closeOverlayListener);
   //закрытие попапа нажатием на ESC
   document.addEventListener('keydown', function(evt) {
     if (evt.key === 'Escape') {
+    document.removeEventListener('keydown', closePopup);
     closePopup(popup);
     }
     });
@@ -114,8 +88,9 @@ const handleEditButtonAddClick = () => {
 function handleAddSubmitClick(evt) {
   evt.preventDefault();
   const addNewImage = addCards(nameInput.value, linkInput.value);
-  elementsList.prepend(addNewImage);
-  evt.target.reset();
+  elementSet.prepend(addNewImage);
+  evt.submitter.classList.add('popup__button_disabled');
+  evt.submitter.disabled = true;
   closePopup(popupAdd);
 };
 // Обработчик «отправки» формы
@@ -129,4 +104,4 @@ function handleFormSubmitClick(evt) {
 popupFormAdd.addEventListener("submit", handleAddSubmitClick);
 editButton.addEventListener('click', handleEditButtonClick);
 editButtonAdd.addEventListener('click', handleEditButtonAddClick);
-popupForm.addEventListener("submit", handleFormSubmitClick);
+popupFormEdit.addEventListener("submit", handleFormSubmitClick);

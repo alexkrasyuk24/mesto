@@ -15,30 +15,32 @@ function disabledSubmit(evt) {
 function enableValidation(config) {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach((form) => {
-    form.addEventListener('submit', disabledSubmit);
     form.addEventListener('input', () => {
-      toggleButton(form, config);
   });
   addInputListners(form, config);
   toggleButton(form, config);
 });
 }
 
-// Валидация формы
-function handleFormInput(evt, config) {
-  const input = evt.target;
-  const inputId = input.id;
-  const errorElement = document.querySelector(`#${inputId}-error`);
-
-  if (input.validity.valid) {
-    input.classList.remove(config.inputErrorClass)
-    errorElement.textContent = '';
-  } else {
+// Валидация формы показать сообщение об ошибке
+function showFormInput(evt, config) { 
+  const input = evt.target; 
+  const inputId = input.id; 
+  const errorElement = document.querySelector(`#${inputId}-error`); 
+  if (!input.validity.valid)
     input.classList.add(config.inputErrorClass);
     errorElement.textContent = input.validationMessage;
   }
+// Валидация формы скрыть сообщение об ошибке
+function hideFormInput(evt, config) {
+  const input = evt.target;
+  const inputId = input.id;
+  const errorElement = document.querySelector(`#${inputId}-error`);
+  if (input.validity.valid) {
+    input.classList.remove(config.inputErrorClass)
+    errorElement.textContent = '';
+} 
 }
-
 // Активная/Неактивная кнопка
 function toggleButton(form, config) {
   const buttonSubmit = form.querySelector(config.submitButtonSelector);
@@ -48,11 +50,13 @@ function toggleButton(form, config) {
 }
 
 function addInputListners(form, config) {
-  const inputList = Array.from(form.querySelectorAll(config.inputSelector));
+  const inputList = form.querySelectorAll(config.inputSelector);
   inputList.forEach((inputElement) => {
-        inputElement.addEventListener('input', (evt) => {
-            handleFormInput(evt, config)
-    });
+        inputElement.addEventListener('input', (inputElement) => {
+            hideFormInput(inputElement, config);
+            showFormInput(inputElement, config);
+            toggleButton(form, config);
+          });
   });
 }
 
