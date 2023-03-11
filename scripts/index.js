@@ -89,6 +89,7 @@ function handleAddSubmitClick(evt) {
   evt.preventDefault();
   const addNewImage = addCards(nameInput.value, linkInput.value);
   elementSet.prepend(addNewImage);
+  evt.target.reset(); 
   evt.submitter.classList.add('popup__button_disabled');
   evt.submitter.disabled = true;
   closePopup(popupAdd);
