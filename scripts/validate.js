@@ -15,11 +15,22 @@ function addInputListners(form, config) {
       validateForm(input, inputList, config, form, button)
     });
   });
+  toggleButton(form, config, button);
 }
+
 const validateForm = (input, inputList, config, form, button) => {
   validateInput(input, config, inputList);
   toggleButton(form, config, button);
 }
+
+const validateFormOnOpen = (form, config) => {
+  const inputList = form.querySelectorAll(config.inputSelector);
+  const button = form.querySelector(config.submitButtonSelector)
+  inputList.forEach(input => {
+    validateForm(input, inputList, config, form, button)
+  });
+}
+
 const validateInput = (input, config) => {
   const isInputValid = checkInputValidity(input)
   if (isInputValid) {
@@ -61,6 +72,6 @@ const formValidationConfig = {
   submitButtonSelector: '.popup__button',
   inactiveButtonClass: 'popup__button_disabled',
   inputErrorClass: 'popup__input_type_error',
-
 };
+
 enableValidation(formValidationConfig);

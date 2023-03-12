@@ -12,6 +12,7 @@
   background-color: #000000;
   align-self: center;
   box-sizing: border-box;
+  outline: none;
 }
 .profile__add-button:hover {
   opacity: 0.6;

@@ -46,45 +46,70 @@ function addCards(nameValue, linkValue) {
     });
     return elementsItem;
   };
+
 initialCards.forEach((card) => {
   const addImage = addCards(card.name, card.link);
   elementSet.append(addImage);
 });
+
 //Добавил закрытие попапов через оверлей
 function closeOverlayListener(evt) {
   if (evt.target.classList.contains('popup_opened')) {
       closePopup(evt.target);
   }
 }
+
 closeButtons.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
+
+const closePopupsEsc = (evt) => { 
+  if (evt.key === 'Escape') {
+    const popup = document.querySelector('.popup_opened');
+      closePopup(popup);
+    }
+} 
+
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  popup.addEventListener('mousedown', closeOverlayListener);
   //закрытие попапа нажатием на ESC
-  document.addEventListener('keydown', function(evt) {
-    if (evt.key === 'Escape') {
-    document.removeEventListener('keydown', closePopup);
-    closePopup(popup);
-    }
-    });
+  document.addEventListener('keydown', closePopupsEsc);
 }
+
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-  document.removeEventListener('mousedown', closeOverlayListener);
+  document.removeEventListener('keydown', closePopupsEsc);
 }
+
+const popups = document.querySelectorAll('.popup')
+popups.forEach(popup => {
+    popup.addEventListener('mousedown', evt => {
+        if (evt.target.classList.contains('popup')) {
+            closePopup(popup)
+          }
+    });
+});
+
 //1 попап редактировать профиль
 function handleEditButtonClick() {
   popupTitle.value = profileTitle.textContent;
   popupSubtitle.value = profileSubtitle.textContent;
+  validateFormOnOpen(popupFormEdit, {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+  })
   openPopup(profilePopup);
 };
+
 //2 попап добавления изображений
 const handleEditButtonAddClick = () => {
   openPopup(popupAdd);
 };
+
 function handleAddSubmitClick(evt) {
   evt.preventDefault();
   const addNewImage = addCards(nameInput.value, linkInput.value);
@@ -94,6 +119,7 @@ function handleAddSubmitClick(evt) {
   evt.submitter.disabled = true;
   closePopup(popupAdd);
 };
+
 // Обработчик «отправки» формы
 function handleFormSubmitClick(evt) {
   evt.preventDefault(); // отмена стандартной отправки формы.
