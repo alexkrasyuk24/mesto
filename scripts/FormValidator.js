@@ -57,7 +57,6 @@ function hideFormInput(input, config) {
   const errorElement = document.querySelector(`#${inputId}-error`);
   input.classList.remove(config.inputErrorClass)
   errorElement.textContent = '';
-
 }
 // Активная/Неактивная кнопка
 function toggleButton(form, config, buttonSubmit) {
