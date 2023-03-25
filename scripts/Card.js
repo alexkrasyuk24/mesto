@@ -48,4 +48,5 @@ _setEventListeners() {
   });
 }
 }
+
 export default Card;
