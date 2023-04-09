@@ -15,7 +15,6 @@ _getTemplate() {
 // добавить, удалить, лайкнуть изображения
 generateCard() {
   this._element = this._getTemplate();
-
   this._element.querySelector('.elements__image').src = this._link;
   this._element.querySelector('.elements__image').alt = this._name;
   this._element.querySelector('.elements__title').textContent = this._name;
@@ -34,11 +33,12 @@ _handleCardLike = () => {
 // удалить изображения
 _handleDeleteCard = () => {
   this._element.remove();
+  this._element = null;
 }
 
 _setEventListeners() {
   this._element.querySelector('.elements__image').addEventListener('click', () => {
-    this._handleClickItem(this._name, this._link);
+    this._handleClickItem({name: this._name, link: this._link});
   });
   this._element.querySelector('.elements__like').addEventListener('click', () => {
     this._handleCardLike();

@@ -20,8 +20,7 @@ class FormValidator {
       });
     }
 
-    resetForm() {
-      this._form.reset();
+    disableButton() {
       this._button.disabled = true;
       this._button.classList.add(this._inactiveButtonClass);
     }

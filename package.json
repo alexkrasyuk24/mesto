@@ -1,0 +1,11 @@
+{
+  "name": "yandex_praktikum",
+  "version": "0.0.1",
+  "description": "Интерактивная страница для [Яндекс.Практикум](https://practicum.yandex.ru/), где есть возможность редактировать профиль, имя и описание, а также добавлять/удалять новые изображения.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexey Krasyuk",
+  "license": "ISC"
+}
