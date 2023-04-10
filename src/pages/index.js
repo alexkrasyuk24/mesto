@@ -1,3 +1,4 @@
+import './index.css';
 import Card from "../scripts/components/Card.js";
 import initialCards from "../scripts/initialCards.js";
 import FormValidator from "../scripts/components/FormValidator.js"
@@ -109,4 +110,4 @@ function handleSubmitFormEdit({name, job}) {
   popupEditInstance.close();
 };
 buttonOpenPopupEdit.addEventListener('click', handleOpenPopupEdit);
-buttonOpenPopupAdd.addEventListener('click', popupAddInstance.open);
+buttonOpenPopupAdd.addEventListener('click', () => popupAddInstance.open());

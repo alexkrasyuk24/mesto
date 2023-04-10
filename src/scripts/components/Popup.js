@@ -5,7 +5,7 @@ class Popup {
     this._popupClassOpened = popupClassOpened;
     this._buttonCloseSelector = buttonCloseSelector;
   }
-  open = () => {
+  open() {
     this._popupElement.classList.add(this._popupClassOpened);
     document.addEventListener('keydown', this._handleEscClose);
   }
