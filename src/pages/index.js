@@ -98,8 +98,12 @@ function handleOpenPopupEdit() {
 function handleSubmitFormAdd(data) {
   cardSection.addItem(createCard(data));
   popupAddInstance.close();
-  formAddValidator.disableButton();
 };
+
+function handleOpenPopupAdd() {
+  popupAddInstance.open();
+  formAddValidator.disableButton();
+}
 
 // Коллбэк сабмита формы редактирования
 function handleSubmitFormEdit({name, job}) {
@@ -110,4 +114,4 @@ function handleSubmitFormEdit({name, job}) {
   popupEditInstance.close();
 };
 buttonOpenPopupEdit.addEventListener('click', handleOpenPopupEdit);
-buttonOpenPopupAdd.addEventListener('click', () => popupAddInstance.open());
+buttonOpenPopupAdd.addEventListener('click', handleOpenPopupAdd);
