@@ -6,6 +6,7 @@ class PopupWithForm extends Popup {
     this._handleSubmitForm = handleSubmitForm;
     this._formElement = this._popupElement.querySelector(formSelector);
     this._formInputs = this._formElement.querySelectorAll('input');
+    this._buttonSubmit = this._formElement.querySelector('button');
   }
   _getInputValues() {
     const formInputValues = {}
@@ -24,6 +25,15 @@ class PopupWithForm extends Popup {
   close() {
     super.close();
     this._formElement.reset();
+  }
+  setLoading(isLoading, buttonText) {
+    if(isLoading) {
+      this._buttonSubmit.textContent = buttonText;
+      this._buttonSubmit.disabled = true;
+    } else {
+      this._buttonSubmit.textContent = buttonText;
+      this._buttonSubmit.disabled = false;
+    }
   }
 }
 export default PopupWithForm

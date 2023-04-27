@@ -12,11 +12,12 @@
          </header>
          <main class="content">
             <section class="profile">
-               <img class="profile__avatar-image" src="<%=require('./images/profile/avatar.jpg')%>" alt="Аватарка"> 
+               <img class="profile__avatar-image" src="#" alt="Аватарка">
+               <button class="profile__avatar-button"></button>
                <div class="profile__info">
-                  <h1 class="profile__title">Жак-Ив Кусто</h1>
+                  <h1 class="profile__title"></h1>
                   <button class="profile__edit-button" type="button" aria-label="Редактировать профиль"></button>
-                  <p class="profile__subtitle">Исследователь океана</p>
+                  <p class="profile__subtitle"></p>
                </div>
                <button class="profile__add-button" type="button" aria-label="Добавить фото"></button>
             </section>
@@ -97,10 +98,41 @@
             <img src="#" alt="Картинка" class="elements__image">
             <div class="elements__container">
                <h2 class="elements__title"></h2>
-               <button class="elements__like" type="button" aria-label="Лайк"></button>
+               <div class="element__likes">
+                <button class="elements__like" type="button" aria-label="Лайк"></button>
+                <span class="element__likes-number"></span>
+              </div>
                <button class="elements__delete" type="button"></button>
             </div>
          </li>
       </template>
    </body>
 </html>
+
+<div class="popup popup_avatar">
+      <div class="popup__container">
+        <button type="button" class="popup__close"></button>
+        <h3 class="popup__title">Обновить аватар</h3>
+        <form class="popup__form popup__form_avatar" name="edit-avatar-form" novalidate>
+            <input
+              type="url"
+              name="avatar"
+              id="avatar"
+              placeholder="Ссылка на картинку"
+              class="popup__input popup__input_value_avatar"
+              required>
+            <span id="avatar-error" class="error"></span>
+            <button type="submit" class="popup__button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_delete-card">
+      <div class="popup__container">
+        <button type="button" class="popup__close"></button>
+        <h3 class="popup__title">Вы уверены?</h3>
+        <form class="popup__form form" name="delete-form" novalidate>
+            <button type="submit" class="popup__button">Да</button>
+        </form>
+      </div>
+    </div> 
